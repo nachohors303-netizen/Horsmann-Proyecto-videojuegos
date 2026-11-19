@@ -1,0 +1,175 @@
+/* estilos.css - HORSMANN PROYECTO VIDEOJUEGOS */
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #14162e;
+    color: #eceaf8;
+}
+
+a { color: #4fd8ff; }
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 24px;
+    background: #1e2247;
+    border-bottom: 4px solid #ff3f8e;
+}
+
+.logo {
+    font-family: "Courier New", monospace;
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffd83d;
+    text-decoration: none;
+}
+
+nav a {
+    color: #eceaf8;
+    text-decoration: none;
+    margin-left: 16px;
+}
+nav a:hover { color: #4fd8ff; }
+
+main {
+    max-width: 480px;
+    margin: 30px auto;
+    padding: 0 16px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #9a9cc8;
+    font-size: 14px;
+}
+
+h1 { font-family: "Courier New", monospace; margin-top: 0; }
+
+.caja {
+    background: #1e2247;
+    border: 2px solid #363c7a;
+    border-radius: 6px;
+    padding: 24px;
+    box-shadow: 5px 5px 0 #0b0c1d;
+}
+
+/* en las páginas con tabla hace falta más ancho */
+main:has(.ancha) { max-width: 1000px; }
+
+.portada { text-align: center; padding: 40px 0; }
+.portada h1 { font-size: 34px; color: #ff3f8e; }
+
+label { display: block; margin: 14px 0 4px; font-weight: bold; }
+
+input[type=text], input[type=email], input[type=password], select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    background: #14162e;
+    color: #eceaf8;
+    border: 2px solid #363c7a;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input:focus, select:focus { outline: 2px solid #4fd8ff; }
+
+.boton {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 10px 18px;
+    background: #ff3f8e;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 3px 3px 0 #0b0c1d;
+}
+.boton:hover { background: #ff6aa9; }
+.boton-claro { background: transparent; color: #4fd8ff; border-color: #4fd8ff; }
+.boton-rojo { background: #e0334f; }
+.boton-chico { margin-top: 0; padding: 5px 10px; font-size: 13px; }
+
+.aviso { padding: 12px 16px; margin-bottom: 18px; border-radius: 4px; border-left: 6px solid; }
+.aviso.ok { background: #14402e; border-color: #4be08a; }
+.aviso.error { background: #4a1a2c; border-color: #ff5470; }
+.aviso ul { margin: 0; padding-left: 18px; }
+
+.vacio { text-align: center; padding: 24px 0; color: #9a9cc8; }
+
+/* tabla de la ficha del perfil */
+.ficha { width: 100%; margin: 16px 0; }
+.ficha th { text-align: left; color: #ffd83d; padding: 6px 12px 6px 0; width: 40%; }
+
+/* listados */
+.buscador { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.buscador input { flex: 1; min-width: 220px; }
+.buscador .boton { margin-top: 0; }
+
+.scroll { overflow-x: auto; }
+.lista { width: 100%; border-collapse: collapse; margin-top: 14px; }
+.lista th, .lista td { padding: 10px; text-align: left; border-bottom: 1px solid #363c7a; white-space: nowrap; }
+.lista th { color: #ffd83d; }
+.lista tr:hover td { background: #262b5a; }
+
+.acciones { display: flex; gap: 8px; align-items: center; }
+.acciones form { margin: 0; }
+
+/* ===== temática videojuegos ===== */
+
+/* fondo con cuadrícula, como el mapa de un juego retro */
+body {
+    background-color: #14162e;
+    background-image:
+        linear-gradient(rgba(79, 216, 255, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(79, 216, 255, 0.06) 1px, transparent 1px);
+    background-size: 32px 32px;
+}
+
+/* tipografía pixelada para títulos (si no carga, usa Courier) */
+.logo, h1, .pantalla, .nivel-num, .parpadeo {
+    font-family: "Press Start 2P", "Courier New", monospace;
+}
+
+h1 { font-size: 18px; line-height: 1.7; color: #ffd83d; }
+.logo { font-size: 14px; }
+
+.pantalla { color: #4fd8ff; font-size: 11px; margin: 0 0 6px; }
+
+/* portada */
+.portada h1 { font-size: 24px; color: #ff3f8e; text-shadow: 4px 4px 0 #0b0c1d; margin: 10px 0 20px; }
+.portada p { margin: 14px 0; }
+.parpadeo { color: #ffd83d; font-size: 14px; animation: parpadeo 1.2s steps(2, start) infinite; }
+@keyframes parpadeo { to { visibility: hidden; } }
+
+.plataformas { margin-top: 40px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.plataformas span { padding: 6px 12px; border: 2px solid #363c7a; background: #1e2247; font-size: 14px; }
+
+/* barra de experiencia del panel */
+.nivel { margin: 18px 0 22px; }
+.nivel-num { display: block; font-size: 12px; color: #4be08a; margin-bottom: 10px; }
+.barra-xp { height: 18px; background: #14162e; border: 2px solid #fff; }
+.barra-xp .relleno { height: 100%; background: #4be08a; }
+.nivel small { display: block; margin-top: 6px; color: #9a9cc8; }
+
+/* nickname resaltado en las tablas */
+.nick { color: #4fd8ff; font-weight: bold; }
+
+/* Game Over */
+.caja h1:only-child { margin-bottom: 8px; }
+
+@media (prefers-reduced-motion: reduce) {
+    .parpadeo { animation: none; }
+}
+
+/* nombre del proyecto en la barra de arriba */
+.logo small { display: block; font-size: 8px; color: #4fd8ff; margin-top: 6px; }
+.rango { color: #ffd83d; font-weight: bold; margin: 0 0 10px; }
